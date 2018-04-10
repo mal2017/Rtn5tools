@@ -1,0 +1,23 @@
+Package: tn5tools
+Type: Package
+Title: Lightweight toolkit for analysis of tn5-based NGS assays
+Version: 0.0.0.9000
+Author@R: person("Matt", "Lawlor", email = "matt.a.lawlorgmail.com",
+                 role = c("aut", "cre"))
+Maintainer: Matt Lawlor <matt.a.lawlor@gmail.com>
+Description: Dedicated tools for (very) basic qc and 
+    exploratory analysis of tn5-based NGS assays are 
+    few and far between. I just want to be able to
+    visualize transposase activity and account for 
+    insertion bias! And a few more things.
+Depends: R (>= 3.4.3),
+    magrittr
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: GenomicRanges,
+    foreach,
+    doParallel,
+    GenomicAlignments,
+    Rsamtools
+RoxygenNote: 6.0.1.9000
