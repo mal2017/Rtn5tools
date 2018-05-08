@@ -9,6 +9,9 @@ import_narrowpeak(path)
 \arguments{
 \item{path}{Character corresponding to path to narrowPeak formatted file.}
 }
+\value{
+A GRanges object.
+}
 \description{
 #https://charlesjb.github.io/How_to_import_narrowPeak/
 }

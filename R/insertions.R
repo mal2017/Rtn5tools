@@ -45,7 +45,8 @@ tn5_cuts <- function(obj, bamfile, bai = bamfile) {
   }
   bind_rows(res_plus, res_minus) %>%
     mutate(region = as.character(obj)) -> ins
-  class(ins) %<>% c(.,'tn5_cuts') %>% return
+  class(ins) %<>% c(.,'tn5_cuts')
+  return(ins)
 }
 
 
@@ -78,6 +79,7 @@ tn5_cuts_in_regions <- function(regions, bamfile, cores = 1, bai = bamfile) {
 #' is with respect to all cuts within each regions, regardless of strand.
 #'
 #' @import dplyr
+#' @export
 cuts_to_frequency <- function(insertions) {
   stopifnot(is(insertions, 'tn5_cuts'))
   insertions %>%
