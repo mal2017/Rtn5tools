@@ -2,6 +2,7 @@
 
 export(cuts_to_frequency)
 export(find_motif_instances)
+export(get_frag_sizes)
 export(import_narrowpeak)
 export(plot_insertions)
 export(reads_aligned)
