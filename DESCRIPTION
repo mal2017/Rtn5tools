@@ -20,5 +20,6 @@ Imports: GenomicRanges,
     doParallel,
     GenomicAlignments,
     Rsamtools,
+    motifmatchr,
     rtracklayer
 RoxygenNote: 6.0.1.9000

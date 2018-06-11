@@ -72,15 +72,15 @@ tn5_cuts_in_regions <- function(regions, bamfile, cores = 1, bai = bamfile) {
 }
 
 
-#' cuts_to_frequency
+#' tn5cuts_to_freq
 #'
 #' From a tibble of cuts, derive a tibble of region-wise
 #' cutting frequencies for each strand. Frequency for each strand
-#' is with respect to all cuts within each regions, regardless of strand.
+#' is with respect to all cuts within each region, regardless of strand.
 #'
 #' @import dplyr
 #' @export
-cuts_to_frequency <- function(insertions) {
+tn5cuts_to_freq <- function(insertions) {
   stopifnot(is(insertions, 'tn5_cuts'))
   insertions %>%
     group_by(region) %>%
@@ -92,14 +92,14 @@ cuts_to_frequency <- function(insertions) {
   return(res)
 }
 
-
+#' make a plot of the output from the  tn5cuts_to_freq function
 #' @import ggplot2
 #' @export
-plot_insertions <- function(freq_tbl) {
+plot_insertion_freq <- function(freq_tbl) {
   stopifnot(is(freq_tbl, 'cuts_to_frequency'))
-  ggplot(freq_tbl,aes(x=pos,y=mean_cut_freq,group=cut_strand)) +
+  ggplot(freq_tbl,aes(x = pos, y = mean_cut_freq, group = cut_strand)) +
     geom_line(aes(color=cut_strand)) +
-    scale_color_manual(values = c(forward="darkorange",rev="darkgreen"),
+    scale_color_manual(values = c(forward = "darkorange", rev = "darkgreen"),
                        name = "Strand") +
     theme_classic() +
     ylab("Mean Insertion Frequency") +
