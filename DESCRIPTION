@@ -1,4 +1,4 @@
-Package: tn5tools
+Package: spaar
 Type: Package
 Title: Lightweight toolkit for analysis of tn5-based NGS assays
 Version: 0.0.0.9000
